@@ -9,12 +9,14 @@ public class Egg : MonoBehaviour
     public float spawnInterval = 1f; // Khoảng thời gian giữa các lần sinh ra đối tượng
 
     private float spawnTimer; // Đếm thời gian giữa các lần sinh ra
-    private int currentSpawnIndex; // Chỉ số của vị trí hiện tại để sinh ra đối tượng
+    //private int currentSpawnIndex; // Chỉ số của vị trí hiện tại để sinh ra đối tượng
 
+    private GameObject chicken;
+    private Animator animator;
     private void Start()
     {
         spawnTimer = spawnInterval;
-        currentSpawnIndex = 0;
+        //currentSpawnIndex = 0;
     }
 
     private void Update()
@@ -39,13 +41,17 @@ public class Egg : MonoBehaviour
             return;
         }
 
-        int randomIndex = Random.Range(0, spawnEggPoints.Length);
-        int randomEggIndex = Random.Range(0, eggPrefabs.Length);
+        int randomIndex = Random.Range(0, spawnEggPoints.Length - 1);
+        //int randomIndex = 0;
+        int randomEggIndex = Random.Range(0, eggPrefabs.Length - 1);
+        chicken = GameObject.Find("Chicken_" + (randomIndex + 1).ToString());
+        animator = chicken.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.SetBool("Lay_egg", true);
+            Instantiate(eggPrefabs[randomEggIndex], spawnEggPoints[randomIndex].position - new Vector3(0, 1, 0), Quaternion.identity);
+        }
 
-        // Sinh ra đối tượng tại vị trí ngẫu nhiên đã chọn
-        Instantiate(eggPrefabs[randomEggIndex], spawnEggPoints[randomIndex].position, Quaternion.identity);
-
-        
     }
-  
+
 }
