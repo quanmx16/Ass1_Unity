@@ -43,7 +43,7 @@ public class Egg : MonoBehaviour
 
         int randomIndex = Random.Range(0, spawnEggPoints.Length - 1);
         //int randomIndex = 0;
-        int randomEggIndex = Random.Range(0, eggPrefabs.Length - 1);
+        int randomEggIndex = Random.Range(0, eggPrefabs.Length);
         chicken = GameObject.Find("Chicken_" + (randomIndex + 1).ToString());
         animator = chicken.GetComponent<Animator>();
         if (animator != null)

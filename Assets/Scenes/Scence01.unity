@@ -703,6 +703,7 @@ MonoBehaviour:
   eggPrefabs:
   - {fileID: 9023160332790668889, guid: c5f787a550eeaf14eb226d62aac9b78a, type: 3}
   - {fileID: 4653814156924470612, guid: 20ed5c58bffbf844ea5294b0b6fde36a, type: 3}
+  - {fileID: 7209213127909139226, guid: 3164b326ea429aa44bbb3c0e5148dbf7, type: 3}
   spawnEggPoints:
   - {fileID: 2054423500}
   - {fileID: 329245137}
@@ -711,7 +712,7 @@ MonoBehaviour:
   - {fileID: 2089984539}
   - {fileID: 977573810}
   - {fileID: 151323339}
-  spawnInterval: 2
+  spawnInterval: 3
 --- !u!1 &1589818023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4494706809226835534, guid: f087df0dce23261468a5bb04546d642e, type: 3}
