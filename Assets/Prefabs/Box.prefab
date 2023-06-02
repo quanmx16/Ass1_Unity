@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 554884491685562520}
   - component: {fileID: 1070362686064714000}
   - component: {fileID: 3024042077374990277}
+  - component: {fileID: -7241814848950572397}
   m_Layer: 0
   m_Name: Box
   m_TagString: Box
@@ -96,7 +97,7 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -123,3 +124,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 18
+--- !u!114 &-7241814848950572397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347172309787782299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898ae5c520024de4baa2b79e0030150f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whiteEggScore: 3
+  rottenEggScore: 1
+  shitScore: -2

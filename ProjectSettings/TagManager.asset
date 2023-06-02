@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Box
   - TeddyBear
+  - Rotten_Egg
+  - White_Egg
+  - Shit
   layers:
   - Default
   - TransparentFX
