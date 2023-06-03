@@ -1,0 +1,7 @@
+1.  Script của trứng + cứt:
+	-Rớt vào giỏ
+	-Rớt ra ngoài
+2. Tạo trứng/cứt
+3. Animation của gà
+4. Design lại giao diện
+5. Tính điểm

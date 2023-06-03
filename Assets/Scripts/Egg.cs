@@ -10,7 +10,7 @@ public class Egg : MonoBehaviour
 
     private float spawnTimer; // Đếm thời gian giữa các lần sinh ra
     //private int currentSpawnIndex; // Chỉ số của vị trí hiện tại để sinh ra đối tượng
-
+    private int eggCount = 0;
     private GameObject chicken;
     private Animator animator;
     private void Start()
@@ -27,8 +27,14 @@ public class Egg : MonoBehaviour
         // Kiểm tra nếu đến thời điểm sinh ra đối tượng mới
         if (spawnTimer <= 0f)
         {
+            eggCount++;
             SpawnObject();
             spawnTimer = spawnInterval;
+            if (eggCount % 5 == 0 && spawnInterval > 0.8f)
+            {
+                eggCount = 0;
+                spawnInterval -= 0.2f;
+            }
         }
     }
 

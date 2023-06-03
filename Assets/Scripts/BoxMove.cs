@@ -30,17 +30,31 @@ public class BoxMove : MonoBehaviour
 
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        //float moveHorizontal = Input.GetAxis("Horizontal");
+        //float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
-        Vector3 newPosition = transform.position + movement * moveSpeed * Time.deltaTime;
+        //Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f);
+        //Vector3 newPosition = transform.position + movement * moveSpeed * Time.deltaTime;
 
-        // Clamp the fish's position within the screen boundaries
-        float clampedX = Mathf.Clamp(newPosition.x, screenBoundaryLeft, screenBoundaryRight);
-        //float clampedY = Mathf.Clamp(newPosition.y, screenBoundaryBottom, screenBoundaryTop);
-        newPosition = new Vector3(clampedX, transform.position.y, 0f);
+        //// Clamp the fish's position within the screen boundaries
+        //float clampedX = Mathf.Clamp(newPosition.x, screenBoundaryLeft, screenBoundaryRight);
+        ////float clampedY = Mathf.Clamp(newPosition.y, screenBoundaryBottom, screenBoundaryTop);
+        //newPosition = new Vector3(clampedX, transform.position.y, 0f);
 
-        transform.position = newPosition;
+        //transform.position = newPosition;
+
+
+        Vector3 mousePosition = Input.mousePosition;
+        Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+        if (mouseWorldPosition.x < screenBoundaryLeft)
+        {
+            mouseWorldPosition.x = screenBoundaryLeft;
+        }
+
+        if (mouseWorldPosition.x > screenBoundaryRight)
+        {
+            mouseWorldPosition.x = screenBoundaryRight;
+        }
+        transform.position = new Vector3(mouseWorldPosition.x, transform.position.y, 0f);
     }
 }

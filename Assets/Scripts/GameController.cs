@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
-
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -52,20 +52,20 @@ public class GameController : MonoBehaviour
         totalScore += score;
         totalScoreText.text = "Score: " + totalScore;
         whiteEgg++;
-        whiteEggText.text = "x" + rottenEgg;
+        whiteEggText.text = "x" + whiteEgg;
     }
     public void AddShit(int score)
     {
         totalScore += score;
         totalScoreText.text = "Score: " + totalScore;
         shit++;
-        shitText.text = "x" + rottenEgg;
+        shitText.text = "x" + shit;
     }
     private void Update()
     {
         if (timer.Finished)
         {
-            Time.timeScale = 0;
+            SceneManager.LoadScene("Scence02");
         }
         else
         {
